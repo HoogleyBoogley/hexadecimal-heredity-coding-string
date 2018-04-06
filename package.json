@@ -1,0 +1,23 @@
+{
+  "name": "hexadecimal-heredity-coding-string",
+  "version": "0.1.0",
+  "description": "Open source digital genetics.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoogleyBoogley/hexadecimal-heredity-coding-string.git"
+  },
+  "keywords": [
+    "genetics",
+    "hexadecimal"
+  ],
+  "author": "Danny Tran <dtran@hoogleyboogley.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HoogleyBoogley/hexadecimal-heredity-coding-string/issues"
+  },
+  "homepage": "https://github.com/HoogleyBoogley/hexadecimal-heredity-coding-string#readme"
+}
