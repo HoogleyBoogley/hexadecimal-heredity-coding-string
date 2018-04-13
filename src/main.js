@@ -10,11 +10,15 @@
 class HB_HHCS {
 
 	constructor(quantity = 2, traits = 20, delay = 1000, runTimes = 1, maxValues= []) {
+		console.log("\x1b[32m", "HHCS by Danny Tran(dannytran.me)", "\x1b[0m");
+
 		// Set values
 		this.quantity = quantity;
 		this.traits = traits;
 		this.delay = delay;
 		this.heredityCodingStrings = {};
+		this.reproTimes = 0;
+		this.runTimes = runTimes;
 
 		// Create and log the initial strings
 		for (var i = 0; i < quantity; i++) {
@@ -24,8 +28,12 @@ class HB_HHCS {
 			console.log("");
 		}
 
+		var self = this;
+
 		for (var i = 0; i < runTimes; i++) {
-			setTimeout(this.reproduce, delay * i, "", "", this.heredityCodingStrings, this.traits);
+			setTimeout(function(){
+			    self.reproduce("", "");
+			}, delay * i);
 		}
 	}
 
@@ -71,18 +79,20 @@ class HB_HHCS {
 	/*	====================
 	 *	Create child string
 	 *	==================== */
-	reproduce(maleID = "", femaleID = "", hhcsArr, numOfTraits) {
+	reproduce(maleID = "", femaleID = "") {
+		var hhcsArr = this.heredityCodingStrings;
+		var numOfTraits = this.traits;
 
 		var maleID = maleID;
 		var femaleID = femaleID;
 
 		if (maleID == "") {
-			maleID = "0x" + Math.floor(Math.random() * Object.keys(hhcsArr).length).toString(16);
+			maleID = "0x" + Math.floor(Math.random() * Object.keys(this.heredityCodingStrings).length).toString(16);
 			console.log("FatherID: " + maleID);
 		}
 
 		if (femaleID == "") {
-			femaleID = "0x" + Math.floor(Math.random() * Object.keys(hhcsArr).length).toString(16);
+			femaleID = "0x" + Math.floor(Math.random() * Object.keys(this.heredityCodingStrings).length).toString(16);
 			console.log("MotherID: " + femaleID);
 		}
 
@@ -118,6 +128,7 @@ class HB_HHCS {
 			// Log the new child string
 			var str = newChild.join(', ');
 			console.log("\x1b[36m", "Creating subject " + StringID + "(Child of " + maleID + " and " + femaleID + ")!", "\x1b[0m");
+			this.heredityCodingStrings[StringID] = newChild;
 			console.log("[" + str + "]");
 			console.log("");
 
@@ -132,13 +143,22 @@ class HB_HHCS {
 
 	}
 
+	death(stringID = "") {
+		var stringID = stringID;
+
+		if (stringID == "") {
+			
+		}
+
+	}
+
 }
 
 /*	====================
  *	Testing
  *	==================== */
 
-var HHCS = new HB_HHCS(4, 20, 1000, 10, [
+var HHCS = new HB_HHCS(4, 20, 1500, 50, [
 	255,
 	255,
 	40,
@@ -158,5 +178,5 @@ var HHCS = new HB_HHCS(4, 20, 1000, 10, [
 	123,
 	26,
 	255,
-	15,
+	15
 ]);
