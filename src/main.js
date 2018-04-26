@@ -3,6 +3,10 @@
  *	Open source digital genetics simulation
  *	https://github.com/HoogleyBoogley/hexadecimal-heredity-coding-string
  *
+ *	Installation:
+ *	> npm i hexadecimal-heredity-coding-string
+ *	https://www.npmjs.com/package/hexadecimal-heredity-coding-string
+ *
  *	Copyright (c) 2018 Danny Tran - https://hoogleyboogley.com
  *	Acceptable use under the MIT license
  */
@@ -143,11 +147,14 @@ class HB_HHCS {
 
 	}
 
+	/*	====================
+	 *	Death of a string
+	 *	==================== */
 	death(stringID = "") {
 		var stringID = stringID;
 
 		if (stringID == "") {
-			
+
 		}
 
 	}
